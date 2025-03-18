@@ -43,6 +43,7 @@ export class ShortcutComponent implements ControlValueAccessor {
       tap(() => this.changeActiveState(false))
     );
     const keydown$ = fromEvent<KeyboardEvent>(input, 'keydown').pipe(
+      tap(event => event.preventDefault()),
       map(event => this.processKeyPress(event))
     );
     const keyup$ = fromEvent<KeyboardEvent>(input, 'keyup').pipe(
@@ -102,7 +103,7 @@ export class ShortcutComponent implements ControlValueAccessor {
   processKeyPress (event: KeyboardEvent) {
     const { result: localResut, key, isLocalValid } = this.excludeModifiers(event);
     let result = localResut;
-    if (!isLocalValid || result.length === 0 || !/^[a-zA-Z]$/.test(key)) {
+    if (!isLocalValid || result.length === 0 || !key) {
       this.isValid = false
     } else {
       this.isValid = true;
