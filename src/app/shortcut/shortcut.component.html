@@ -1,0 +1,16 @@
+<div [ngClass]="{'active': active}" (click)="changeActiveState(true)" class="shortcut">
+    <input 
+        #input
+        class="input-style"
+        />
+    <ng-container *ngIf="!!testValue; else placeholder">
+        <div *ngFor="let shortcut of testValue|shortcutPipe" class="shortcut-item">
+            {{shortcut}}
+        </div>
+    </ng-container>
+    <ng-template #placeholder>
+        <div class="placeholder">
+            Press Shortcut
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,18 @@
+
+<style>
+  .content {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+  <shortcut-input
+    (ngModelChange)="updateData($event)"
+    [modifiers]="modifiers"
+    [ngModel]="data"></shortcut-input>
+
+  </div>
+</main>

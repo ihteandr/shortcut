@@ -1,0 +1,31 @@
+.shortcut {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+.active {
+    border-color: #007bff!important;
+}
+.input-style {
+    height: 0;
+    padding: 0;
+    border: none;
+    width: 0;
+}
+.shortcut-item {
+    background-color: #ccc;
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin: 0 2px;
+}
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
